@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+	<title>Serveur Web Raspbian</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
+<!-- FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+
+</head>
+<body>
+	<header class=" titre">
+		<h1>Creer un Serveur Web <br/>Raspberry Pi</h1>
+				<h2>Guide pour démarrer son premier serveur web et héberger vos sites.</h2>
+					<h6>Par <em>Claude Petit</em></h6>
+					<h6>Inspirer de 
+						<em>
+							<a href="https://raspbian-france.fr/installer-serveur-web-raspberry-lamp/">Raspbian France</a>
+						</em>
+						/
+						<em>
+							<a href="https://doc.ubuntu-fr.org/tutoriel/lamp_repertoires_de_travail">Ubuntu-FR</a>
+						</em>
+						/
+					</h6>
+	</header>
+
+
+	<div class="fond">
+		<img src="http://www.techdonut.co.uk/sites/default/files/managed-server-hosting-your-server-in-the-cloud-523968604.jpg" alt="server" class="serverimg">
+		<div class="intro">
+				<h2>Pouquoi ce tuto ?</h2>
+					<p>On a tous connu la galère du début "j'ai tout suivi et ça ne MARCHE PAS... WTF" pas de violence tu peux le faire. J'aime à croire que nous sommes tous capable mais tout rassembler dans un tuto peut être utile. Vous êtes donc les bienvenus pour agrémenter celui-ci.</p>
+		</div>
+
+		<div class="first">
+			<h2>C'est quoi un Raspberry Pi ?</h2>
+				<p>Je passe les détails, je vous invite à aller voir <a href="https://raspbian-france.fr">Raspbian-France</a> qui vous expliquera mieux que moi le côté hardware et les possibilités de cette petite bombe.</p>
+		</div>
+
+		<hr>
+
+		<div class="first">
+			<h2>On attaque dans le dure !!!</h2>
+				<h3>Côté Raspberry Pi (RPI) :</h3>
+					<ul>
+						<ol>- brancher le à une prise .</ol>
+						<ol>- Brancher le à un port RG45 de votre boxe internet.</ol>
+						<ol>- Formater votre carte micro SD</ol>
+					</ul>
+						<p>Nous allons devoir installer l’OS ( système d’exploitation) sur votre bécane (RPI).
+							<br/>Ici nous utiliserons Raspbian qui n’est n’y a plus n’y a moins qu’une suite GNU/LINUX Debian.
+
+							<br/>Deux manières s’offrent à vous d’installer :
+						</p>
+					<ul>
+						<ol>-la version Lite (c’est pour les barbus qui kiffe le terminal)</ol>
+						<ol>- la version Graphique (oui ya les menus des icônes trop cool)</ol>
+					</ul>
+				<h3>Les différences :</h3>
+						<p>
+							<br/><strong>V. lite, :</strong>
+							<br/>On accède au Raspbian à distance depuis ton PC, donc pas de souris.
+							<br/>Tu accèdes depuis ton terminal Linux ou Mac, pas Windows.
+							<br/>Os moins lourd.
+							<br/>
+							<br/><strong>V. graphique:</strong>
+							<br/>Tu peux te brancher en HDMI sur un écran.
+							<br/>Donc il y a une souris et un beau fond écran…
+							<br/>Si tu as Windows tu devras utiliser ton Raspbian branché à un écran avec clavier et souris brancher dessus.
+							<br/>Os plus lourd
+						</p>
+						<p>
+							Aller téléchargeons <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>
+						</p>
+			<h2>
+				Instalation de Raspian sur le Raspbery Pi
+			</h2>
+						<p>
+							On pourrait penser qu'il faille juste faire un <a href="https://fr.wikipedia.org/wiki/Glisser-d%C3%A9poser">drag and drop</a> (glissé déposé), or quand tu démarres un PC tu n'as accès qu'au <a href="https://fr.wikipedia.org/wiki/Basic_Input_Output_System">BIOS</a>. Je ne compte pas faire un cours d'informatique donc je te laisse chercher par toi-même, c'est juste pour ce qui ne connaisse pas ça vous évitera de vous prendre la tête pendant trente ans.
+						</p>
+				<h3>
+					Créer une carte Bootable.
+				</h3>
+						<p>
+							Tu récupères donc ton .image qui correspond à ton image Raspbian Strech (Lite).
+							Dans un OS tu as énormément de dossier contenant des fichiers. Nous allons juste utiliser certains fichiers qui vont forcer le PC (ici le RPI) à lancer les programmes se situant dans ces dossiers.
+						</p>	
+				<h3>
+					Explication :
+				</h3>
+						<p>
+							 En face To face tu ne vois qu’un fichier .IMG, c’est normal, les dossiers/fichiers son empiler pour ne générer qu’une seule image. Cela s’appelle de l’empilement. Je te la fais courte c’est pour comprendre l’idée, que tu ne fasses pas ça bêtement.
+						</p>
+				<h3>
+					Revenons à nos claviers.
+				</h3>
+						<p>
+							On va utiliser un logiciel pour créer une carte bootable .
+							Tu peux utiliser divers logiciels :
+						</p>
+								<ul>
+									<ol>W32 Disc imageait</ol>
+									<ol>UNETbootin</ol>
+									<ol>...</ol>
+								</ul>
+						<p>
+							Ils marchent tous plus ou moins de la même manière. Certains n’acceptent pas certains formats. Donc juste ce référer à au doc.
+							<br/>
+							Prenons ici UNETbootin, c’est super simple :
+						</p>
+							<code>Disk image - format .image - retrouve le chemin ou se situe ton OS</code>
+					
+							<code>Type - retrouve ta carte micro SD</code>
+							
+									<img src="https://www.pendrivelinux.com/wp-content/uploads/unetbootin-live-usb-iso.png">
+						<p>
+							Fini en validant sur OK.
+							<br/>
+							<br/>
+							FINI
+							<br/>
+							Tu plug ta carte dans le RPI et une fois branché comme indiqué plus haut, tout est fonctionnel.
+							<br/>(Sauf version <a href="https://raspbian-france.fr/installer-raspbian-premier-demarrage-configuration/">Graphique,</a> c'est presque fonctionnel.)
+							<br/>Bravo, t’emballe pas c’est que le début.
+						</p>
+						
+		</div>
+
+			<hr>
+
+		<div>
+			<h2>Mais où est Raspbery Pi?</h2>
+				<p>
+					Il faut à présent retrouver l’adresse de ton raspberry pi (si tu tournes avec un mode graphique sautes cette étape)
+					Tu vas donc chercher lip local de ton RPI.
+
+					<code>$ ifconfig</code>
+
+						<img src="https://unixspu.files.wordpress.com/2013/02/ubu2.png"; width="700px"; >
+					<br/>
+					Ce qui va nous interesser ici sera la partie <strong>eth0</strong>, <strong>Inet addr</strong>.
+					L'ip local sera par exemple:
+					<code>192.168.0.1.</code>
+					Voici l'ip de votre modem.
+					<br/>
+					À partir de maintenant débrancher la prise de courant de votre RPI.(Vous comprendrez plus tard, pas le temps là ^^)
+					On va utiliser à présent <strong>NMAP</strong>, qui est un outil très puissant pour scanner un réseau(les ports, ip...).
+					<code>sudo apt-get install nmap</code>
+					Ou celle-ci pour une distribution à base de RPM :
+					<code>sudo yum install nmap</code>
+					Derrière un petit:
+					<code>sudo apt-get update</code>
+					Si il y a besoin:
+					<code>sudo apt-get upgrade</code>
+					OK, maintenant utilisons NMAP.
+					<code>nmap -sn 192.168.0.1/24</code>
+					<strong>nmap</strong> pour appeler le logiciel, <strong>-sn</strong> va pinger et scanner le réseau, <strong>192.168.0.1</strong> le réseau à scanner (ici le modem).
+					<br/>Regarder bien le nombre et la fin de chaque <strong>IP</strong>.
+					<br/>Rebranchez à présent votre RPI. Puis re-faite le même processus.
+					<code>nmap -sn 192.168.0.1/24</code>
+					L'ip qui vient de ce rajouter correspond à votre RPI. Merveilleux.
+				</p>
+				<h3>On va enfin pouvoir se connecter à son RPI ?</h3>
+					<p>
+						Yes of course, une petite clope et on si met.
+					</p>
+			<H2>
+				La notion SSH / FTP / SFTP NTM....
+			</H2>
+					<p>
+						Franchement ce n'est pas compliquer faux juste si pencher un peu.
+						<br/>
+						Tout est dit dans le nom.
+					</p>
+						<ul>
+							<li>SSH: Secure Shell</li>
+							<li>FTP: Files Transfert Protocol</li>
+							<li>SFTP: Secure Files Transfert Protocol</li>
+						</ul>
+					<p>
+						<strong>SHH</strong> te permet de naviguer sur ton serveur.
+						<br/>
+						<strong>FTP</strong> te permet d'importer ou exporter sur ton serveur.
+						<br/>
+						<strong>SFTP</strong> pareil que FTP mais de manière sécurisé.
+						<br/>
+						À ma connaissance d'origine on peut seulement utiliser SSH et SFTP sur raspbery. La commande FTP a été supprimée pour des raison de sécurité.
+						<br/>
+						C'est repartie. On se connecte à notre RPI.
+							<code>ssh pi@192.168.0.12</code>
+						<strong>ssh</strong> pour le protocole <strong>pi@</strong> le nom du serveur <strong>192.168.0.12</strong>
+						l'ip du RPI (elle peut être différente chez vous).
+						<br/>
+						<br/>
+						On vous demande:
+							<code>pi@192.168.0.12's password:</code>
+						D'origine le password est "<strong>raspberry</strong>"".
+							<code>Linux raspberrypi 4.14.79+ #1159 Sun Nov 4 17:28:08 GMT 2018 armv6l
+
+						The programs included with the Debian GNU/Linux system are free software;
+						<br/>
+						the exact distribution terms for each program are described in the
+						individual files in /usr/share/doc/*/copyright.
+						<br/>
+						Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+						permitted by applicable law.
+						Last login: Wed Jan 23 00:19:31 2019 from 192.168.0.10
+							</code>
+							Là on commence à être pas mal. Bon on a encore rien fait, mais on est bien.
+							<br/>
+							Dans la fouler on change le mot de passe.
+							<code>passwd pi</code>
+							<code>
+							Enter new UNIX password:
+							<br/>Retype new UNIX password:
+	 						<br/>passwd: password updated successfully
+	 						</code>
+	 					On va maintenant mettre à jour Raspbian:
+	 						<code>sudo apt-get update</code>
+	 						<code>sudo apt-get upgrade</code>
+	 					On est prêt à instaler le serveur sur notre bécane.
+					</p>
+			<hr>
+		</div>
+
+
+
+		<div class="server">
+			<h2>
+				Instalation du Serveur.
+			</h2>
+				<p>
+					 Il existe différents logiciels qui te permettront de faire un  <strong>serveur</strong>, ici on parlera du plus connu <strong>Apache</strong>.
+					<br/>Tu as peut être entendu parler de <strong>WAMP</strong> , <strong>LAMP</strong> , <strong>MAMP</strong> ?
+					C'est tout simplement un acronyme pour désigner ; Microsoft / Apache / MySql / Php, pareil pour Linux et Mac.
+					<br/> 
+					<br/>
+					Un serveur va donc se composer de ses différents langages / logiciels qui te permettent de lire et paramétrer les fichiers, notamment gérer la base d’accès et le droit admin / client.
+					<br/>
+				</p>
+					<h3>
+						Commençons :
+					</h3>
+						<p>
+							
+						</p>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>
