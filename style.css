@@ -7,8 +7,7 @@ body {
 	margin-right: 15%;
 	padding-left: 15%;	
 	background-image: linear-gradient(to right, #33ff99 , #006666);
-  	background-position: fixed;
-	background-repeat: ;
+
 }
 /*-------TITRE------*/
 .titre{
@@ -66,6 +65,10 @@ code {
 	margin-bottom: 2%;
 
 }
+img {
+	width:100%
+}
+
 /*------FIN FONT------*/
 .serverimg {
 	width: 500px;
