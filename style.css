@@ -1,0 +1,92 @@
+html , body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 70%;
+	margin-right: 15%;
+	padding-left: 15%;	
+	background-image: linear-gradient(to right, #33ff99 , #006666);
+  	background-position: fixed;
+	background-repeat: ;
+}
+/*-------TITRE------*/
+.titre{
+	text-align: center;
+	color: white;
+	text-shadow: 10px -4px 7px #404040;
+	height: 100vh;
+}
+
+.titre h1 {
+	text-align: left;
+	font-family: 'Libre Barcode 128 Text', cursive;
+	margin-top: 7%;
+	padding-bottom: 2%;
+	font-size: 6em;
+}
+.titre h2 {
+	text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.8em;
+}
+.titre h6 {
+	text-align: center;
+	font-family: Arial;
+	font-size: 1em;
+}
+.titre h6 em {
+	color: #000000;
+}
+/*-------FIN TITRE------*/
+
+/*------FONT GENERAL-----*/
+
+h2 {
+	font-family: 'Staatliches', cursive;
+    font-size: 2em;
+}
+h3 {
+	font-family: 'Staatliches', cursive;
+
+}
+p {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.2em;
+}
+code {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: black;
+	color: white;
+	border-radius: 20px;
+	padding: 1%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+
+}
+/*------FIN FONT------*/
+.serverimg {
+	width: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.fond{
+	background-color:white;
+	padding: 4%;
+	border-radius: 10px;
+}
+
+/*--------INTRO-------*/
+.intro {
+	padding-bottom: 5%;
+}
+
+/*--------FIN INTRO-------*/
+
+/*--------FIRST-----------*/
+.first {
+	padding-bottom:  1%;
+}
