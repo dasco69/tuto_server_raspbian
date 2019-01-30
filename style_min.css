@@ -1,0 +1,47 @@
+/*Moyenne résolution*/
+@media screen and (min-width: 600px) {
+	img {
+	width:100%
+}
+
+}
+
+/*Fin Moyenne résolution*/
+/* max-width pour faibles résolutions */
+@media all and (max-device-width: 640px) {
+body {
+	width:100%;
+	margin-right: 0;
+	padding-left:0;	
+	background-image: linear-gradient(to right, #33ff99 , #006666);
+}
+.titre{
+	text-align: center;
+	color: white;
+}
+
+.titre h1 {
+	margin-top: 20%;
+	padding-bottom: 0;
+	font-size: 12em;
+	margin-left: 5%;
+}
+.titre h2 {
+    font-size: 4em;
+}
+.titre h6 {
+	font-size: 2em;
+	text-shadow:none;
+}
+
+/*image*/
+.serverimg {
+	display: none;
+}
+img {
+	width:100%
+}
+/*Fin image*/
+
+
+}
